@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café One80</title>
+  <meta name="description" content="Café One80 — Faith. Music. Community. You Belong Here." />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #06111d;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1536px;
+      margin: 0 auto;
+      position: relative;
+      background: #06111d;
+    }
+
+    .homepage-art {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 3;
+      text-indent: -9999px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .hotspot:focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: 3px;
+    }
+
+    /* Coordinates are percentages of the 1536 x 1024 design image. */
+    .contact-link {
+      left: 77.3%;
+      top: 2.4%;
+      width: 19.8%;
+      height: 4.6%;
+    }
+
+    .directions-link {
+      left: 77.9%;
+      top: 87.8%;
+      width: 16.4%;
+      height: 6.2%;
+    }
+
+    .fallback-content {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Café One80 homepage">
+    <img class="homepage-art" src="images/cafe-one80-homepage.png" alt="Café One80 homepage with live music, community, mission statement, contact phone number, address, and directions." />
+
+    <a class="hotspot contact-link" href="tel:+17023765543" aria-label="Call Café One80 at 702-376-5543">Call Café One80</a>
+    <a class="hotspot directions-link" href="https://www.google.com/maps/search/?api=1&query=6050%20E.%20State%20Route%2069%2C%20Prescott%20Valley%2C%20AZ%2086314" target="_blank" rel="noopener" aria-label="Get directions to Café One80">Get directions</a>
+
+    <section class="fallback-content">
+      <h1>Café One80</h1>
+      <p>Faith. Music. Community. You Belong Here.</p>
+      <p>Café One80 is a place where great music, meaningful stories, and real relationships come together. Everyone is welcome.</p>
+      <h2>A Place to Belong</h2>
+      <p>Café One80 is an open door for anyone searching for hope, community, and a fresh start. We believe every story matters — and that the best ones are still being written.</p>
+      <p>6050 E. State Route 69, Prescott Valley, AZ 86314</p>
+      <p>Contact: (702) 376-5543</p>
+    </section>
+  </main>
+</body>
+</html>
