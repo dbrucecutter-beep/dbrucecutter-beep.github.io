@@ -7,22 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
-        
         .logo-font { font-family: 'Playfair Display', serif; }
         .hero-text { text-shadow: 0 4px 30px rgba(0,0,0,0.85); }
-        
-        /* This prevents Android font scaling from blowing up the logo and text */
-        * {
-            max-height: 999999px;
-        }
-        
-        .no-scale {
-            font-size: 16px !important;
-            text-size-adjust: 100% !important;
-        }
     </style>
 </head>
-<body class="bg-zinc-950 text-white no-scale">
+<body class="bg-zinc-950 text-white">
 
     <!-- Navbar -->
     <nav class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-zinc-800">
@@ -63,12 +52,28 @@
     <!-- Next Event -->
     <section id="next-event" class="py-16 bg-black">
         <div class="max-w-2xl mx-auto px-6">
-            <div class="text-center mb-10">
+            <div class="text-center mb-6">
                 <h2 class="text-4xl font-bold tracking-tight">Next Event</h2>
+                <p class="text-xl text-orange-200 mt-3">An evening to remember.</p>
             </div>
             <img src="images/Flyer.png" 
                  alt="Next Event Flyer" 
                  class="w-full rounded-3xl shadow-2xl border border-zinc-700">
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 bg-zinc-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold tracking-tight mb-3">Experience Café One80</h2>
+                <p class="text-orange-200">Come see what it's all about</p>
+            </div>
+            
+            <video width="100%" controls muted loop playsinline class="rounded-3xl shadow-2xl">
+                <source src="images/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
