@@ -7,11 +7,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+        
         .logo-font { font-family: 'Playfair Display', serif; }
         .hero-text { text-shadow: 0 4px 30px rgba(0,0,0,0.85); }
+        
+        /* This prevents Android font scaling from blowing up the logo and text */
+        * {
+            max-height: 999999px;
+        }
+        
+        .no-scale {
+            font-size: 16px !important;
+            text-size-adjust: 100% !important;
+        }
     </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-zinc-950 text-white no-scale">
 
     <!-- Navbar -->
     <nav class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-zinc-800">
@@ -42,7 +53,7 @@
                  class="h-32 md:h-44 mx-auto mb-6 md:mb-8">
             
             <h1 class="hero-text text-5xl md:text-7xl font-bold logo-font tracking-tighter leading-none mb-6">
-                FAITH<br>MUSIC<br>COMMUNITY
+                FAITH.<br>MUSIC.<br>COMMUNITY.
             </h1>
             
             <p class="hero-text text-3xl md:text-4xl text-orange-200 italic mb-12">You Belong Here.</p>
