@@ -1,87 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Café One80</title>
-  <meta name="description" content="Café One80 — Faith. Music. Community. You Belong Here." />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #06111d;
-      min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 1536px;
-      margin: 0 auto;
-      position: relative;
-      background: #06111d;
-    }
-
-    .homepage-art {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .hotspot {
-      position: absolute;
-      display: block;
-      z-index: 3;
-      text-indent: -9999px;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .hotspot:focus-visible {
-      outline: 3px solid #ffffff;
-      outline-offset: 3px;
-    }
-
-    /* Coordinates are percentages of the 1536 x 1024 design image. */
-    .contact-link {
-      left: 77.3%;
-      top: 2.4%;
-      width: 19.8%;
-      height: 4.6%;
-    }
-
-    .directions-link {
-      left: 77.9%;
-      top: 87.8%;
-      width: 16.4%;
-      height: 6.2%;
-    }
-
-    .fallback-content {
-      position: absolute;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café One80</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+        .logo-font { font-family: 'Playfair Display', serif; }
+        .hero-text { text-shadow: 0 4px 30px rgba(0,0,0,0.85); }
+    </style>
 </head>
-<body>
-  <main class="page" aria-label="Café One80 homepage">
-    <img class="homepage-art" src="images/cafe-one80-homepage.png" alt="Café One80 homepage with live music, community, mission statement, contact phone number, address, and directions." />
+<body class="bg-zinc-950 text-white">
 
-    <a class="hotspot contact-link" href="tel:+17023765543" aria-label="Call Café One80 at 702-376-5543">Call Café One80</a>
-    <a class="hotspot directions-link" href="https://www.google.com/maps/search/?api=1&query=6050%20E.%20State%20Route%2069%2C%20Prescott%20Valley%2C%20AZ%2086314" target="_blank" rel="noopener" aria-label="Get directions to Café One80">Get directions</a>
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-zinc-800">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-orange-400 font-medium tracking-wider text-sm">
+                LIVE MUSIC • COMMUNITY • HOPE
+            </div>
+            <a href="tel:7023765543" class="bg-orange-600 hover:bg-orange-500 px-6 py-3 rounded-full font-medium flex items-center gap-2 text-sm">
+                <span class="text-xl">☎</span> (702) 376-5543
+            </a>
+        </div>
+    </nav>
 
-    <section class="fallback-content">
-      <h1>Café One80</h1>
-      <p>Faith. Music. Community. You Belong Here.</p>
-      <p>Café One80 is a place where great music, meaningful stories, and real relationships come together. Everyone is welcome.</p>
-      <h2>A Place to Belong</h2>
-      <p>Café One80 is an open door for anyone searching for hope, community, and a fresh start. We believe every story matters — and that the best ones are still being written.</p>
-      <p>6050 E. State Route 69, Prescott Valley, AZ 86314</p>
-      <p>Contact: (702) 376-5543</p>
+    <!-- Hero -->
+    <header class="relative min-h-screen flex items-center overflow-hidden">
+        <img src="images/Crowd.png" 
+             alt="Café One80 Live Music" 
+             class="absolute inset-0 w-full h-full object-top">
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/90"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-12">
+            <img src="images/Round-3.png" alt="Café One80 Logo" class="h-44 mx-auto mb-8">
+            
+            <h1 class="hero-text text-5xl md:text-7xl font-bold logo-font tracking-tighter leading-none mb-6">
+                FAITH.<br>MUSIC.<br>COMMUNITY.
+            </h1>
+            
+            <p class="hero-text text-3xl md:text-4xl text-orange-200 italic mb-12">You Belong Here.</p>
+        </div>
+    </header>
+
+    <!-- Next Event -->
+    <section id="next-event" class="py-16 bg-black">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold tracking-tight">Next Event</h2>
+            </div>
+            <img src="images/Flyer.png" 
+                 alt="Next Event Flyer" 
+                 class="w-full rounded-3xl shadow-2xl border border-zinc-700">
+        </div>
     </section>
-  </main>
+
+    <!-- Mission -->
+    <section class="py-20 bg-zinc-900">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">A Place to Belong</h2>
+            <p class="text-xl leading-relaxed text-zinc-300">
+                Café One80 is an open door for anyone searching for hope, community, and a fresh start. 
+                We believe every story matters — and that the best ones are still being written.
+            </p>
+            <p class="mt-10 text-3xl font-light italic text-orange-200">
+                Come As You Are.<br>Leave Encouraged.
+            </p>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section class="py-20 bg-black">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold mb-8">Come Visit Us</h3>
+            
+            <div class="bg-zinc-900 rounded-3xl p-10">
+                <p class="text-2xl mb-6">6050 E. State Route 69<br>Prescott Valley, AZ 86314</p>
+                
+                <a href="tel:7023765543" 
+                   class="block text-3xl text-orange-400 hover:text-orange-300 mb-8 transition-colors">
+                    (702) 376-5543
+                </a>
+                
+                <a href="https://maps.google.com/maps?q=6050+E.+State+Route+69,+Prescott+Valley,+AZ+86314" 
+                   target="_blank"
+                   class="inline-block bg-orange-600 hover:bg-orange-500 text-white px-10 py-4 rounded-2xl text-lg font-medium">
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 py-12 text-center text-zinc-500 text-sm">
+        <div class="max-w-6xl mx-auto px-6">
+            © 2026 Café One80 • Music & Entertainment • Prescott Valley, Arizona
+        </div>
+    </footer>
+
 </body>
 </html>
