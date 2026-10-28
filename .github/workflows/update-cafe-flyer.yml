@@ -18,20 +18,12 @@ jobs:
     steps:
       - name: Check out website
         uses: actions/checkout@v4
-      - name: Download Google Drive flyer
-        env:
-          DRIVE_FILE_ID: 1noBEdWbt93gaq8XyZDpp5rmwHv8-yhg9
+      - name: Download flyer from Google Drive folder
         run: |
           python -m pip install --quiet gdown
-          gdown "$DRIVE_FILE_ID" -O /tmp/cafe-flyer.png
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('/tmp/cafe-flyer.png')
-          data = p.read_bytes()
-          if len(data) < 1000 or not data.startswith(bytes.fromhex('89504e470d0a1a0a')):
-              raise SystemExit('Download was not a valid PNG; live flyer unchanged.')
-          print(f'Validated PNG: {len(data):,} bytes')
-          PY
+          mkdir -p /tmp/cafe-drive
+          gdown --folder 'https://drive.google.com/drive/folders/14QKGLjYuHLLI2NT6am7f8fT4RzaksBHN' -O /tmp/cafe-drive
+          python -c "from pathlib import Path; import shutil; files=list(Path('/tmp/cafe-drive').rglob('flyer.png')); assert len(files)==1, 'Expected exactly one flyer.png'; data=files[0].read_bytes(); assert len(data)>1000 and data.startswith(bytes.fromhex('89504e470d0a1a0a')), 'Invalid PNG'; shutil.copyfile(files[0], '/tmp/cafe-flyer.png')"
       - name: Check for changes
         run: |
           if cmp -s /tmp/cafe-flyer.png images/Flyer.png; then
